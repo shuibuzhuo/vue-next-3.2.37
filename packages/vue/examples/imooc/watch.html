@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../dist/vue.global.js"></script>
+</head>
+<body>
+  
+  <script>
+    const { reactive, watch } = Vue
+
+    const obj = reactive({
+      name: 'shuibuzhuo'
+    })
+
+    watch(obj, (value, oldValue) => {
+      console.log('watch监听被触发')
+      console.log('value', value)
+      console.log('oldValue', oldValue)
+    })
+
+    setTimeout(() => {
+      obj.name = 'zhangsan'
+    })
+  </script>
+</body>
+</html>
