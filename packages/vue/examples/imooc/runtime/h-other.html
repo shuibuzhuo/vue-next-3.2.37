@@ -7,22 +7,17 @@
   <script src="../../../dist/vue.global.js"></script>
 </head>
 <body>
-  <div id="app"></div>
-
+  
   <script>
-    const { h, render, Text, Comment, Fragment } = Vue
+    const { h } = Vue
 
-    // const vnode1 = h(Text, 'hello Text')
-    // console.log('vnode1', vnode1)
-    // render(vnode1, document.getElementById('app'))
+    const vnode = h('div', {
+      class: {
+        'testobj': true
+      }
+    }, 'hello render')
 
-    // const vnode2 = h(Comment, 'hello Comment')
-    // console.log('vnode2', vnode2)
-    // render(vnode2, document.getElementById('app'))
-
-    const vnode3 = h(Fragment, 'hello Fragment')
-    console.log('vnode3', vnode3);
-    render(vnode3, document.getElementById('app'))
+    console.log(vnode)
   </script>
 </body>
 </html>
