@@ -15,23 +15,13 @@
 
     const renderFn = compile(template)
 
-    console.log('renderFn', renderFn);
-
     const component = {
-      render: function render(_ctx, _cache) {
-  with (_ctx) {
-    const { openBlock: _openBlock, createElementBlock: _createElementBlock } = Vue
-
-    return (_openBlock(), _createElementBlock("div", null, "hello world"))
-  }
-}
+      render: renderFn
     }
 
     const vnode = h(component)
 
     render(vnode, document.querySelector('#app'))
-
-    console.log(renderFn)
   </script>
 </body>
 </html>
